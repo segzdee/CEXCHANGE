@@ -1,0 +1,93 @@
+---
+app:
+  name: OpenDax
+  domain: app.local
+  subdomain: www
+  show_landing: true
+render_protect: false
+csrfEnabled: false
+vendor:
+  frontend: https://github.com/openware/baseapp.git
+ssl:
+  enabled: false
+  email: support@example.com
+database:
+  adapter: mysql
+  host: db
+  port: 3306
+  user: root
+  password: changeme
+vault:
+  root_token: s.LnKWMKEheduFyP9LKXnO7bKK
+  peatio_rails_token: s.LEn3HXjikZnHOElaWhudl5UP
+  peatio_crypto_token: s.ZXEuesUV2D1ewf0GBgmmKp40
+  peatio_upstream_token: s.eCF5EomMowdXNkIPu0IJgxGk
+  peatio_matching_token: s.fHjfA6frXU9TfJId7d7UtKEi
+  barong_token: s.OpKMCZYVJK02A14rhm4LIljH
+  finex_engine_token: s.XZ2GRSDeLalCnsMxq5eeUCZr
+kyc:
+  provider: kycaid
+  authorization_token: changeme
+  sandbox_mode: true
+  api_endpoint: https://api.kycaid.com/
+images:
+  peatio: quay.io/openware/peatio:2.6.1
+  barong: quay.io/openware/barong:2.6.1
+  frontend: quay.io/openware/baseapp:2.6.1
+  tower: quay.io/openware/tower:2.6.1
+  finex: quay.io/openware/finex:2.6.1
+  gateway: quay.io/openware/envoy:2.6.1
+  cryptonodes: quay.io/openware/cryptonodes:2.6.1
+  arke: quay.io/openware/arke:2.6.1
+storage:
+  provider: Google
+  bucketname: opendax-barong-docs-bucket
+  endpoint: https://fra1.digitaloceanspaces.com
+  region: fra1
+  signatureVersion: v4
+  access_key: changeme
+  secret_key: changeme
+wallets:
+  eth:
+    uri: http://geth:8545
+    kind: eth
+  btc:
+    uri: http://bitcoind:18332
+    kind: btc
+parity:
+  enable: false
+bitcoind:
+  enable: false
+litecoind:
+  enable: false
+twilio:
+  enabled: false
+  phone_number: "+15005550000"
+  account_sid: changeme
+  auth_token: changeme
+gaTrackerKey: UA-000000-01
+smtp:
+  sender_name: OpenDAX
+  sender_email: noreply@example.com
+  password: changeme
+  domain: example.com
+  host: smtp.sendgrid.net
+  port: 25
+  auth: plain
+captcha:
+  type: recaptcha
+  siteKey: changeme
+  secretKey: changeme
+terraform:
+  credentials: "~/safe/opendax.json"
+  project: example-opendax
+updateVersions: false
+arke:
+  ms:
+    host: http://www.example1.com
+    api_key: changeme
+    secret: changeme
+  dx:
+    host: http://www.example2.com
+    api_key: changeme
+    secret: changeme
